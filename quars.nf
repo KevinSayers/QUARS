@@ -64,6 +64,7 @@ def usage() {
     Options:
       --outdir                      Absolute path to the output data (must be enclosed in quotes). If no path specified, the default behaviour is search in the current dir for the folder "Results" (i.e. "./Results/"). Be sure to add the final "/" to the path.
       --cpus                        Integer specifying the number of cores to use. Be aware of the limits of your machine.
+      -profile condor               Used when in a cluster with the HTCondor executor. For configuration of the HTCondor parameters go to nextflow.config and change the required settings.
     """.stripIndent()
 }
 

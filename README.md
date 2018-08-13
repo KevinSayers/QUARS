@@ -25,14 +25,19 @@ Integration with [Docker](https://www.docker.com) is in progress.
 
 Thanks to nextflow. installation is not a must, you just have to call it from command line as:
 
-    nextflow run TainVelasco-Luquez/quars.nf --fastq_files 'mydir/*.fastq.gz'
+    nextflow run TainVelasco-Luquez/quars.nf
 or
 
-    nextflow run https://github.com/TainVelasco-Luquez/quars.nf --fastq_files 'mydir/*.fastq.gz'
+    nextflow run https://github.com/TainVelasco-Luquez/quars.nf
 
 Alternatively you can clone the repo and run it locally by
 
     git clone https://github.com/TainVelasco-Luquez/QUARS
+    nextflow run TainVelasco-Luquez/quars.nf
+
+If you are running on a cluster:
+
+    nextflow run TainVelasco-Luquez/quars.nf -profile condor
 
 ### Typical usage
 * For paired end fastq files:
@@ -54,6 +59,7 @@ Alternatively you can clone the repo and run it locally by
 #### Options
   `--outdir `                     Absolute path to the output data (must be enclosed in quotes). If no path specified, the default behaviour is search in the current dir for the folder "Results" (_i.e._ "./Results/"). Be sure to add the final "/" to the path.
   `--cpus`                        Integer specifying the number of cores to use. Be aware of the limits of your machine.
+  `-profile condor`               Used when in a cluster with the HTCondor executor. For configuration of the HTCondor parameters go to `nextflow.config` and change the required settings.
 
 ## Credits
 @TainVelasco-Luquez
